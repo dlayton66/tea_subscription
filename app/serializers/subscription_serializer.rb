@@ -1,4 +1,8 @@
 class SubscriptionSerializer
   include JSONAPI::Serializer
-  attributes :title, :price, :frequency
+  attributes :price, :frequency, :status
+
+  attribute :tea do |object|
+    object.tea.title
+  end
 end
