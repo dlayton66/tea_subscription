@@ -4,7 +4,7 @@ RSpec.describe 'Api::V1::Customers::Subscriptions', type: :request do
   let!(:customer) { create(:customer) }
   let!(:tea) { create(:tea) }
   
-  describe 'create customer subscription' do
+  describe 'create' do
     let!(:params) { { 
       tea_id: tea.id,
       price: 10.00,
@@ -62,7 +62,7 @@ RSpec.describe 'Api::V1::Customers::Subscriptions', type: :request do
     end
   end
 
-  describe 'update customer subscription' do
+  describe 'update' do
     it 'can change the status to cancelled' do
       subscription = create(:subscription, customer: customer, status: 'active')
 
